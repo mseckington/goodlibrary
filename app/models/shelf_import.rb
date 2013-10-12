@@ -16,7 +16,7 @@ class ShelfImport
         series: extract_series(book_data.search('title').text),
         author: book_data.search('author name').first.text,
         image_url: book_data.search('image_url').first.text,
-        goodreads_url: book_data.search('link').text,
+        goodreads_url: book_data.search('link').first.text,
         isbn: book_data.search('isbn').text,
         isbn13: book_data.search('isbn13').text,
         num_pages: book_data.search('num_pages').text,
