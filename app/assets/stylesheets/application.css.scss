@@ -6,6 +6,7 @@
 @import "vendor/grid";
 @import "vendor/rems";
 @import "vendor/simple_typography";
+@import "vendor/beautons";
 
 
 // Base
@@ -26,3 +27,4 @@
 
 // Modules
 @import "modules/book";
+@import "modules/article";

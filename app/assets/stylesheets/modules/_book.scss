@@ -1,9 +1,10 @@
 .book {
   @extend .link-complex;
+  @include rem('margin-bottom', rhythm(1));
+
   background-color: #EEE;
   min-height: 160px;
-  padding: 20px;
-  margin: 10px 0;
+  padding: $base-spacing-unit;
 }
 
 .book__heading {

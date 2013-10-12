@@ -1,0 +1,20 @@
+.article {
+  // Pull the article up so that it d
+  @include rem('margin-top', rhythm(-1));
+}
+
+.article__subtitle {
+  $pull-up: 0.75;
+  @include rem('margin-top', rhythm(-$pull-up));
+  @include rem('margin-bottom', rhythm($pull-up));
+}
+
+.article__buttons {
+  @include rem('margin-bottom', rhythm(1));
+}
+
+.article__line-item {
+  span {
+    font-weight: bold;
+  }
+}

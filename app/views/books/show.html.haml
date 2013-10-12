@@ -1,35 +1,42 @@
+.article
+  %h1.article__title= @book.title
+  %p.article__subtitle= @book.series
 
-%h1= @book.title
-%p= @book.series
+  .grid<
+    .grid__item.desk--three-quarters>
+      .article__buttons
+        =link_to 'Check out', '/', :class => 'btn btn--small'
 
-.grid<
-  .grid__item.desk--four-fifths>
-    %p= @book.author
-    .description!= @book.description
+      .description!= @book.description
 
-  .grid__item.desk--one-fifth>
-    =book_image_tag(@book)
+    .grid__item.desk--one-quarter>
+      %p
+        =book_image_tag(@book)
 
-    %p<
-      Format:
-      %span= @book.format
+      %p.article__line-item<
+        Author:
+        %span= @book.author
 
-    %p<
-      Pages:
-      %span= @book.num_pages
+      %p.article__line-item<
+        Format:
+        %span= @book.format
 
-    %p<
-      Rating:
-      %span= @book.rating || 'N/A'
+      %p.article__line-item<
+        Pages:
+        %span= @book.num_pages
 
-    %p<
-      Publisher:
-      %span= @book.publisher
+      %p.article__line-item<
+        Rating:
+        %span= @book.rating || 'N/A'
 
-    %p<
-      ISBN:
-      %span= @book.isbn
+      %p.article__line-item<
+        Publisher:
+        %span= @book.publisher
 
-    %p
-      = link_to "GoodReads", @book.goodreads_url
+      - unless @book.isbn.empty?
+        %p.article__line-item<
+          ISBN:
+          %span= @book.isbn.inspect
 
+      %p.article__line-item
+        = link_to "GoodReads", @book.goodreads_url
