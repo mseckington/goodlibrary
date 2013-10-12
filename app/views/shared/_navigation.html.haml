@@ -7,7 +7,7 @@
       =link_to 'Books', '/'
       - if signed_in?
         = "Hi, #{current_user.first_name}"
-        = form_tag(session_path, :method => :delete) do
-          = button_tag(content_tag('span', 'Sign out'))
+        = form_tag(session_path, :method => :delete, class: 'sign-out') do
+          = button_tag(content_tag('div', 'Sign out'), class: 'btn btn--small btn--negative')
       - else
-        =link_to 'Sign In', sign_in_path
+        =link_to 'Sign In', sign_in_path, :class => 'btn btn--small'
