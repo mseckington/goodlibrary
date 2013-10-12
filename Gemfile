@@ -11,6 +11,8 @@ gem 'json'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'nokogiri'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'valid_email', :require => 'valid_email/email_validator'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
