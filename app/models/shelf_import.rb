@@ -43,9 +43,7 @@ class ShelfImport
   end
 
   def extract_series title
-    if title['('].nil?
-      title
-    else
+    if !title['('].nil?
       title.split('(').last[0..-2].strip
     end
   end
