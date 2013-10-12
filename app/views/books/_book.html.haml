@@ -1,0 +1,7 @@
+.media
+  .media__img
+    = link_to book_image_tag(book), book_path(book)
+  .media__body
+    %h3= book.title
+    %p= book.series
+    %p= book.author

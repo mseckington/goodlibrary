@@ -1,0 +1,25 @@
+@import "base/variables";
+@import "vendor/normalize";
+@import "vendor/grid";
+@import "vendor/rems";
+@import "vendor/simple_typography";
+@import "base/extend_typography";
+@import "base/typography";
+@import "modules/media";
+
+.main {
+  max-width: 976px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+.cf{
+  &:after{
+    content:"";
+    display:table;
+    clear:both;
+  }
+}

@@ -1,0 +1,55 @@
+html {
+  font-family: 'Helvetica', sans-serif;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-rendering: optimizeLegibility;
+}
+
+p,
+ul,
+ol,
+pre {
+  @include rem('margin', 0 0 rhythm(1) 0);
+}
+
+ul,
+ol {
+  @include rem('padding-left', $base-font-size * 2.5);
+}
+
+pre {
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3 {
+  @extend %headings;
+}
+
+h1 {
+  @extend %giga;
+}
+
+h2 {
+  @extend %mega;
+}
+
+h3 {
+  @extend %kilo;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+.link-nostyle {
+  &, &:hover {
+    color: $text-color;
+    text-decoration: none;
+  }
+}

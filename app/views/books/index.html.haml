@@ -1,2 +1,4 @@
-- @books.each do |book|
-  = book_image_tag(book)
+.grid<
+  - @books.each do |book|
+    .grid__item.lap--one-half.desk--one-third>
+      = render partial: 'book', locals: {book: book}
