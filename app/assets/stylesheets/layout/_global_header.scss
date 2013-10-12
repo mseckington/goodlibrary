@@ -1,0 +1,23 @@
+.global-header {
+  @extend .cf;
+  border-bottom: 1px solid lighten($text-color, 40%);
+}
+
+
+.header-title {
+  @include rem('font-size', modular-scale(2));
+  line-height: (rhythm(3) / modular-scale(2));
+  margin-bottom: 0;
+  font-weight: bold;
+
+  a {
+    @extend .link-nostyle;
+  }
+  float: left;
+}
+
+.header-nav {
+  float: right;
+  @include rem('padding', rhythm(1) 0);
+  line-height: (rhythm(1) / modular-scale(0));
+}

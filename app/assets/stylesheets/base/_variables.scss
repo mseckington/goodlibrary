@@ -5,7 +5,7 @@ $ratio: 1.2; // Perfect fourth
 
 // Grid config
 $base-spacing-unit: 16px;
-$half-spacing-unit: 16px;
+$half-spacing-unit: $base-spacing-unit / 2;
 
 // Colors
 $text-color: #222;
