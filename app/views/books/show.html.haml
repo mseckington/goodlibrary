@@ -1,5 +1,35 @@
-= @book.title
-= book_image_tag(@book)
-= @book.author
-= @book.description
+
+%h1= @book.title
+%p= @book.series
+
+.grid<
+  .grid__item.desk--four-fifths>
+    %p= @book.author
+    .description!= @book.description
+
+  .grid__item.desk--one-fifth>
+    =book_image_tag(@book)
+
+    %p<
+      Format:
+      %span= @book.format
+
+    %p<
+      Pages:
+      %span= @book.num_pages
+
+    %p<
+      Rating:
+      %span= @book.rating || 'N/A'
+
+    %p<
+      Publisher:
+      %span= @book.publisher
+
+    %p<
+      ISBN:
+      %span= @book.isbn
+
+    %p
+      = link_to "GoodReads", @book.goodreads_url
 

@@ -1,6 +1,34 @@
+html {
+  overflow-y: scroll;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  color: $text-color;
+  background-color: $background-color;
+}
+
+
+// These selection rule sets have to be separate.
+// Customize the background color to match your design.
+::-moz-selection {
+  color: $selected-text-color;
+  background: $selected-background-color;
+  text-shadow: none;
+}
+
+::selection {
+  color: $selected-text-color;
+  background: $selected-background-color;
+  text-shadow: none;
+}
+
 img {
   max-width: 100%;
+  vertical-align: middle;
 }
+
 
 .main {
   max-width: 976px;
