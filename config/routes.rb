@@ -10,6 +10,9 @@ Goodlibrary::Application.routes.draw do
   get '/register', :to => 'registrations#new'
   post '/register', :to => 'registrations#create'
 
+  get '/sign-in', :to => 'sessions#new', :as => 'sign_in'
+  post '/sign-in', :to => 'sessions#create', :as => 'session'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
