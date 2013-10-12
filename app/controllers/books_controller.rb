@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.with_image.all
+    @books = Book.with_image.in_series_alphabetical_order.all
   end
 
   def show

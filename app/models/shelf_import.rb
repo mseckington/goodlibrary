@@ -46,7 +46,7 @@ class ShelfImport
     if title['('].nil?
       title
     else
-      title.split('(').last[0..-2]
+      title.split('(').last[0..-2].strip
     end
   end
 
