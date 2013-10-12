@@ -5,4 +5,9 @@
   %ul.nav.nav--global
     %li
       =link_to 'Books', '/'
-      =link_to 'Sign In', '/sign-in'
+      - if signed_in?
+        = "Hi, #{current_user.first_name}"
+        = form_tag(session_path, :method => :delete) do
+          = button_tag(content_tag('span', 'Sign out'))
+      - else
+        =link_to 'Sign In', sign_in_path
