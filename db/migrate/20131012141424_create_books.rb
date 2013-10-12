@@ -12,6 +12,7 @@ class CreateBooks < ActiveRecord::Migration
       t.text :description
       t.string :author
       t.integer :rating
+      t.string :series
 
       t.timestamps
     end

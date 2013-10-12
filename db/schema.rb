@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131012141424) do
     t.text     "description"
     t.string   "author"
     t.integer  "rating"
+    t.string   "series"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
