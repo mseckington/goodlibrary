@@ -14,7 +14,7 @@ class ShelfImport
       book = Book.new(
         title: book_data.search('title').text,
         author: book_data.search('author name').first.text,
-        image_url: book_data.search('image_url').text,
+        image_url: book_data.search('image_url').first.text,
         goodreads_url: book_data.search('link').text,
         isbn: book_data.search('isbn').text,
         isbn13: book_data.search('isbn13').text,

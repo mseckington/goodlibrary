@@ -5,6 +5,8 @@ Goodlibrary::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  root to: 'books#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -13,6 +15,8 @@ Goodlibrary::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+
+  resources :books, only: [:index, :show]
 
   # Example resource route with options:
   #   resources :products do
@@ -39,7 +43,7 @@ Goodlibrary::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
