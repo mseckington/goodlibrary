@@ -7,6 +7,9 @@ Goodlibrary::Application.routes.draw do
 
   root to: 'books#index'
 
+  get '/register', :to => 'registrations#new'
+  post '/register', :to => 'registrations#create'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

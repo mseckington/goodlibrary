@@ -1,0 +1,22 @@
+= form_for(@user, url: register_path(course: params[:course])) do |f|
+  = control_group_for(@user, :first_name) do
+    = f.label :first_name, 'First name*'
+    = f.text_field :first_name, :autofocus => true
+    = error_message_for(@user, :first_name)
+  = control_group_for(@user, :last_name) do
+    = f.label :last_name, 'Last name*'
+    = f.text_field :last_name
+    = error_message_for(@user, :last_name)
+  = control_group_for(@user, :email) do
+    = f.label :email, 'Email*'
+    = f.email_field :email
+    = error_message_for(@user, :email)
+  = control_group_for(@user, :password) do
+    = f.label :password, 'Password*'
+    = f.password_field :password, value: @user.password
+    = error_message_for(@user, :password)
+  = control_group_for(@user, :password_confirmation) do
+    = f.label :password_confirmation, 'Password confirmation*'
+    = f.password_field :password_confirmation, value: @user.password_confirmation
+    = error_message_for(@user, :password_confirmation)
+  = button_tag "Register"
