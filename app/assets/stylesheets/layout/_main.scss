@@ -1,0 +1,17 @@
+img {
+  max-width: 100%;
+}
+
+.main {
+  max-width: 976px;
+  margin: 0 auto;
+}
+
+
+.cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

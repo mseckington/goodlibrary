@@ -1,3 +1,11 @@
-.book-image {
-  float: right;
+.book {
+  @extend .link-complex;
+  background-color: #EEE;
+  min-height: 160px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.book__heading {
+  @extend .link-complex__target;
 }
