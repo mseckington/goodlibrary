@@ -25,6 +25,7 @@ Goodlibrary::Application.routes.draw do
 
   resources :books, only: [:index, :show] do
     resource :loan, only: [:create, :destroy]
+    get 'loan', to: "loans#update"
   end
 
   # Example resource route with options:

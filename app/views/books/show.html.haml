@@ -5,7 +5,10 @@
   .grid<
     .grid__item.desk--three-quarters>
       .article__buttons
-        =link_to 'Check out', '/', :class => 'btn btn--small'
+        - if Loan.on_loan?(@book, current_user)
+          = button_to 'Return this book', book_loan_path(@book), method: :delete, class: 'btn btn--small btn--negative'
+        - else
+          = button_to 'Check out this book', book_loan_path(@book), class: 'btn btn--small'
 
       .description!= @book.description
 
