@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
   scope :with_image, -> { where('image_url is NOT ?', 'https://www.goodreads.com/assets/nocover/111x148.png') }
   scope :in_series_alphabetical_order, -> { order('series IS NULL ASC, series ASC') }
   scope :unavailable, -> { includes(:loans).where('loans.out_date is NOT NULL').references(:loans)}
-  scope :available, -> { includes(:loans).where(loans: {out_date: nil})}
+  scope :available, -> { where("id not IN (?)", Loan.active.collect(&:book_id))}
 
   def available?
     !Loan.on_loan?(self)
