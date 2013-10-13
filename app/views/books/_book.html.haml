@@ -1,6 +1,6 @@
 = link_to book_path(book), :class => ['book media', ('book--unavailable' unless book.available?)] do
   .media__img
-    / =book_image_tag(book)
+    =book_image_tag(book)
   .media__body
     %h3.book__heading= book.title
     %p= book.series
