@@ -12,9 +12,14 @@ class Loan < ActiveRecord::Base
       find_or_create_by!(book: book, user: user, out_date: Date.today, in_date: nil)
     end
 
-    def on_loan?(book, user)
+    def lended_to?(book, user)
       return false if book.nil? || user.nil?
       where(book_id: book.id, user_id: user.id, in_date: nil).present?
+    end
+
+    def on_loan?(book)
+      return false if book.nil?
+      where(book_id: book.id, in_date: nil).present?
     end
 
     def return_loan(book, user)

@@ -9,4 +9,8 @@ class Book < ActiveRecord::Base
   scope :in_series_alphabetical_order, -> { order('series IS NULL ASC, series ASC') }
   scope :unavailable, -> { includes(:loans).where('loans.out_date is NOT NULL').references(:loans)}
   scope :available, -> { includes(:loans).where(loans: {out_date: nil})}
+
+  def available?
+    Loan.on_loan?(self)
+  end
 end
