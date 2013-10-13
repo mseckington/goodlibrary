@@ -11,6 +11,7 @@ class Loan < ActiveRecord::Base
     end
 
     def on_loan?(book, user)
+      return false if book.nil? || user.nil?
       where(book_id: book.id, user_id: user.id, in_date: nil).present?
     end
 
