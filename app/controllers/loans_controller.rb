@@ -3,10 +3,14 @@ class LoansController < ApplicationController
   before_filter :lookup_book
 
   def create
-    if payment.create
-      session[:payment_id] = payment.id
-      session[:book_id] = @book.id
-      redirect_to payment.links.find{|link| link.method == 'REDIRECT'}.href
+    if signed_in?
+      if payment.create
+        session[:payment_id] = payment.id
+        session[:book_id] = @book.id
+        redirect_to payment.links.find{|link| link.method == 'REDIRECT'}.href
+      end
+    else
+      redirect_to sign_in_path
     end
   end
 
