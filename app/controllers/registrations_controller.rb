@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.persisted?
-      # sign_in_as @user
+      sign_in_as @user
       redirect_to root_path
     else
       @user.password_confirmation = user_params[:password_confirmation]
