@@ -1,7 +1,11 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.with_image.in_series_alphabetical_order.all
+    if params[:available]
+      @books = Book.with_image.available.in_series_alphabetical_order
+    else
+      @books = Book.with_image.in_series_alphabetical_order.all
+    end
   end
 
   def show
