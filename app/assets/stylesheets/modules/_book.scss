@@ -2,7 +2,7 @@
   @extend .link-complex;
   @include rem('margin-bottom', rhythm(1));
 
-  background-color: #EEE;
+  background-color: #ddd;
   min-height: 160px;
   padding: $base-spacing-unit;
 }
