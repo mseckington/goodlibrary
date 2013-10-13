@@ -11,6 +11,6 @@ class Book < ActiveRecord::Base
   scope :available, -> { includes(:loans).where(loans: {out_date: nil})}
 
   def available?
-    Loan.on_loan?(self)
+    !Loan.on_loan?(self)
   end
 end

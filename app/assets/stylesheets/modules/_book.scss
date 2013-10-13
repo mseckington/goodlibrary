@@ -7,6 +7,10 @@
   padding: $base-spacing-unit;
 }
 
+.book--unavailable {
+  background-color: lighten(#f00, 40%);
+}
+
 .book__heading {
   @extend .link-complex__target;
 }
