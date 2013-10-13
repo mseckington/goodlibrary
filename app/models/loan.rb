@@ -5,6 +5,8 @@ class Loan < ActiveRecord::Base
 
   validates :book_id, :user_id, presence: true
 
+  scope :active, -> { where(in_date: nil) }
+
   class << self
     def lend(book, user)
       find_or_create_by!(book: book, user: user, out_date: Date.today, in_date: nil)

@@ -28,6 +28,8 @@ Goodlibrary::Application.routes.draw do
     get 'loan', to: "loans#update"
   end
 
+  get 'my-loans', to: 'books#my_loans', as: 'my_loans'
+
   # Example resource route with options:
   #   resources :products do
   #     member do
